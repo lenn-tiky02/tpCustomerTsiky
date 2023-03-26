@@ -192,5 +192,5 @@ public class Customer implements Serializable {
     public String toString() {
         return "mg.itu.tpcustomertsiky.entities.Customer[ customerId=" + customerId + " ]";
     }
-    
+
 }

@@ -18,9 +18,10 @@ import mg.itu.tpcustomertsiky.entities.Discount;
  */
 @Stateless
 public class DiscountManager implements Serializable {
+
     @PersistenceContext(unitName = "customerPU")
     private EntityManager em;
-   
+
     public List<Discount> getAllDiscounts() {
         Query query = em.createNamedQuery("Discount.findAll");
         return query.getResultList();
@@ -33,5 +34,5 @@ public class DiscountManager implements Serializable {
     public void persist(Discount discount) {
         em.persist(discount);
     }
-    
+
 }

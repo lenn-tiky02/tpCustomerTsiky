@@ -19,24 +19,25 @@ import mg.itu.tpcustomertsiky.entities.Customer;
 @Named(value = "customerBean")
 @ViewScoped
 public class CustomerBean implements Serializable {
-    private List<Customer> customerList;  
-      
-    @EJB  
+
+    private List<Customer> customerList;
+
+    @EJB
     private CustomerManager customerManager;
-    
+
     /**
      * Creates a new instance of CustomerBean
      */
     public CustomerBean() {
     }
-          
-    /** 
+
+    /**
      * Retourne la liste des clients pour affichage dans une DataTable.
-     */  
+     */
     public List<Customer> getCustomers() {
-      if (customerList == null) {
-        customerList = customerManager.getAllCustomers();
-      }
-      return customerList;
+        if (customerList == null) {
+            customerList = customerManager.getAllCustomers();
+        }
+        return customerList;
     }
 }

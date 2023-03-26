@@ -17,21 +17,24 @@ import mg.itu.tpcustomertsiky.entities.Customer;
 
 @Stateless
 public class CustomerManager {
+
     @PersistenceContext(unitName = "customerPU")
     private EntityManager em;
 
     public void persist(Customer customer) {
-      em.persist(customer);
+        em.persist(customer);
     }
-    public List<Customer> getAllCustomers() {  
-       Query query = em.createNamedQuery("Customer.findAll");
-       return query.getResultList();
-    }  
-        
+
+    public List<Customer> getAllCustomers() {
+        Query query = em.createNamedQuery("Customer.findAll");
+        return query.getResultList();
+    }
+
     public Customer update(Customer customer) {
-      return em.merge(customer);
-    }         
-    public Customer findById(int idCustomer) {  
-        return em.find(Customer.class, idCustomer);  
-    } 
+        return em.merge(customer);
+    }
+
+    public Customer findById(int idCustomer) {
+        return em.find(Customer.class, idCustomer);
+    }
 }

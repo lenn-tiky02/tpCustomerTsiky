@@ -95,5 +95,5 @@ public class Discount implements Serializable {
     public String toString() {
         return "mg.itu.tpcustomertsiky.entities.Discount[ code=" + code + " ]";
     }
-    
+
 }
